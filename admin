@@ -2,35 +2,51 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>MALIQ Admin</title>
-    <!-- Netlify CMS kullan -->
-    <script src="https://unpkg.com/netlify-cms@^2.10.0/dist/netlify-cms.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MALIQ Tarifler</title>
     <style>
-        body { margin: 0; font-family: Arial, sans-serif; }
-        .loading { text-align: center; padding: 50px; }
+        body { 
+            font-family: Arial, sans-serif; 
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 { color: #333; text-align: center; }
+        .admin-btn {
+            display: block;
+            width: 200px;
+            margin: 30px auto;
+            padding: 15px;
+            background: #007acc;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+        .admin-btn:hover {
+            background: #005a9e;
+        }
     </style>
 </head>
 <body>
-    <div class="loading">
-        <h2>MALIQ Admin Yükleniyor...</h2>
-        <p>Eğer bu mesaj kaybolmazsa, sayfayı yenileyin.</p>
-    </div>
-    
-    <script>
-        // Netlify CMS otomatik config.yml'yi yükler
-        console.log('Netlify CMS loading...');
+    <div class="container">
+        <h1>🍳 MALIQ Tarifler</h1>
+        <p>Yemek tarifleri koleksiyonuna hoş geldiniz!</p>
         
-        setTimeout(function() {
-            if (window.NetlifyCms) {
-                console.log('Netlify CMS loaded successfully');
-                document.querySelector('.loading').style.display = 'none';
-            } else {
-                console.error('Netlify CMS failed to load');
-                document.querySelector('.loading').innerHTML = 
-                    '<h2 style="color: red;">Hata: CMS yüklenemedi</h2>' +
-                    '<p>Lütfen sayfayı yenileyin veya farklı tarayıcı deneyin.</p>';
-            }
-        }, 3000);
-    </script>
+        <a href="https://app.netlify.com/start/deploy?repository=https://github.com/netlify-templates/one-click-hugo-cms" 
+           class="admin-btn">
+            📝 Admin Paneli Kur
+        </a>
+        
+        <p><small>Admin paneli kurmak için yukarıdaki butona tıklayın. Netlify'da 2 dakikada hazır olacak.</small></p>
+    </div>
 </body>
 </html>
