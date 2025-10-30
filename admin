@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>MALIQ Admin</title>
+    <!-- Netlify CMS kullan -->
+    <script src="https://unpkg.com/netlify-cms@^2.10.0/dist/netlify-cms.js"></script>
+    <style>
+        body { margin: 0; font-family: Arial, sans-serif; }
+        .loading { text-align: center; padding: 50px; }
+    </style>
+</head>
+<body>
+    <div class="loading">
+        <h2>MALIQ Admin Yükleniyor...</h2>
+        <p>Eğer bu mesaj kaybolmazsa, sayfayı yenileyin.</p>
+    </div>
+    
+    <script>
+        // Netlify CMS otomatik config.yml'yi yükler
+        console.log('Netlify CMS loading...');
+        
+        setTimeout(function() {
+            if (window.NetlifyCms) {
+                console.log('Netlify CMS loaded successfully');
+                document.querySelector('.loading').style.display = 'none';
+            } else {
+                console.error('Netlify CMS failed to load');
+                document.querySelector('.loading').innerHTML = 
+                    '<h2 style="color: red;">Hata: CMS yüklenemedi</h2>' +
+                    '<p>Lütfen sayfayı yenileyin veya farklı tarayıcı deneyin.</p>';
+            }
+        }, 3000);
+    </script>
+</body>
+</html>
