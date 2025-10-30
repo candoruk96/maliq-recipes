@@ -1,1 +1,25 @@
 
+backend:
+  name: git-gateway
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "recipes"
+    label: "Tarifler"
+    folder: "content/recipes"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { name: "title", label: "Yemek Adı", widget: "string" }
+      - { name: "emoji", label: "Emoji", widget: "string", required: false }
+      - { name: "category", label: "Kategori", widget: "string" }
+      - label: "Malzemeler"
+        name: "ingredients"
+        widget: "list"
+        fields:
+          - { name: "name", label: "Ad", widget: "string" }
+          - { name: "qty", label: "Miktar", widget: "string" }
+          - { name: "unit", label: "Birim", widget: "string" }
+      - { name: "instructions", label: "Tarif Metni", widget: "markdown" }
